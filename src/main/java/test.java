@@ -26,7 +26,7 @@ public class test {
     public static void extractContent(String filePath){
 
         JavaSparkContext sc = new JavaSparkContext("local[*]", "Simple App");
-        JavaPairRDD<String, PortableDataStream> data = sc.binaryFiles(filePath).repartition(12);
+        JavaPairRDD<String, PortableDataStream> data = sc.binaryFiles(filePath).repartition(8);
 //        System.out.println(data.partitions().size());
 //        JavaRDD<Tuple2<String, PortableDataStream>> javaRDD = sc.parallelize(data.collect());
 //        System.out.println(javaRDD.partitions().size());
